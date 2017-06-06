@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+if [ "$1" == "on" ];
+then
+	tput smam;
+elif [ "$1" == "off" ];
+then
+	tput rmam;
+fi
