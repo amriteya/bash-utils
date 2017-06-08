@@ -1,0 +1,12 @@
+#!/bin/sh
+# Parses a raw un-formatted json and retrieves the value for corresponding key
+#
+# Input:
+# $1 - JSON data
+# $2 - key whose corresponding value needs to be extracted
+#
+# Output:
+# Value corresponding to passed key in the given JSON data.
+# 
+# Works with non-nested simple key, value pairs
+echo $1 | sed -e 's/[{}[:space:]\"]/''/g' | tr ',' '\n' | grep -w "$2" | cut -d ':' -f 2
